@@ -1,5 +1,4 @@
-# ASSIGNMENT12--09-21
-MODULE 18 - PyChain Ledger
+# PyChain Ledger
 
 ![alt=""](Images/application-image.png)
 
@@ -101,4 +100,4 @@ You’ll upload the Python file for this assignment to your GitHub repository.
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
