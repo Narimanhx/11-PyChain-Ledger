@@ -1,5 +1,5 @@
 # BlockChain
-![alt=""](images/block.png)
+![alt=""](code/Images/block.png)
 
 # BlockChain Validation
-![alt=""](images/block_valid.png)
+![alt=""](code/Images/block_valid.png)
