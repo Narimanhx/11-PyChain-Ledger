@@ -25,7 +25,7 @@
 # Imports
 import streamlit as st
 from dataclasses import dataclass
-from typing import List
+from typing import Any, List
 import datetime as datetime
 import pandas as pd
 import hashlib
@@ -46,11 +46,8 @@ import hashlib
 # Note that you’ll use this new `Record` class as the data type of your `record` attribute in the next section.
 
 
-# @TODO
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
-# YOUR CODE HERE
-
 @dataclass
 class Record:
     sender: str
@@ -72,7 +69,6 @@ class Record:
 @dataclass
 class Block:
 
-    # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
     record: Record
 
@@ -175,20 +171,19 @@ pychain = setup()
 
 # @TODO:
 # Add an input area where you can get a value for `sender` from the user.
-# YOUR CODE HERE
 sender = st.text_input("Sender")
 
 # @TODO:
 # Add an input area where you can get a value for `receiver` from the user.
-# YOUR CODE HERE
 receiver = st.text_input("Receiver")
 
 # @TODO:
 # Add an input area where you can get a value for `amount` from the user.
-# YOUR CODE HERE
-amount = st.text_input("Amount")
+amount = st.number_input("Amount", min_value=0.0)
+
 
 if st.button("Add Block"):
+    new_record = Record(sender, receiver, amount)
     prev_block = pychain.chain[-1]
     prev_block_hash = prev_block.hash_block()
 
@@ -197,7 +192,7 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        record=Record(sender=sender, receiver=receiver, amount=amount),
+        record=new_record,
         creator_id=42,
         prev_hash=prev_block_hash
     )
